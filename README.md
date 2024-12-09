@@ -3,6 +3,13 @@
 # Three.js Shader Hackathon Project
 
 
+## Project Preview
+
+Here is a preview video of the project:
+
+[Project Preview Video](https://github.com/user-attachments/assets/1f386767-0c1d-4773-9442-aa8703a8e4e2)
+
+
 *   **Favorite Color:**  `#191970` (Midnight Blue)
 *   **Complementary Color:** `#707019` (Olive)  _This was determined using the [Canva Color Wheel](https://www.canva.com/colors/color-wheel/)._
 *   **Last Three Digits of Student ID:** `061`
