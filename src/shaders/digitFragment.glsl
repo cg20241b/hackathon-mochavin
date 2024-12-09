@@ -1,28 +1,29 @@
-varying vec3 vNormal;
-varying vec3 vWorldPosition;
+varying vec3 vNormal; // Input: Normal vector in world space
+varying vec3 vWorldPosition; // Input: Vertex position in world space
 
-uniform vec3 color;
-uniform vec3 lightPosition;
-uniform vec3 lightColor;
-uniform float ambientIntensity;
-uniform float specularShininess; // For metallic effect
+uniform vec3 color; // Object color
+uniform vec3 lightPosition; // Position of the light source
+uniform vec3 lightColor; // Color of the light source
+uniform float ambientIntensity; // Ambient light intensity
+uniform float specularShininess; // Shininess for the specular highlight
+uniform vec3 cameraPosition;
 
 void main() {
-  // Ambient light
+  // Ambient light component
   vec3 ambient = ambientIntensity * color;
 
-  // Diffuse light
-  vec3 lightDirection = normalize(lightPosition - vWorldPosition);
-  float diff = max(dot(vNormal, lightDirection), 0.0);
+  // Diffuse light component
+  vec3 lightDirection = normalize(lightPosition - vWorldPosition); // Direction to the light source
+  float diff = max(dot(vNormal, lightDirection), 0.0); // Diffuse factor
   vec3 diffuse = diff * lightColor * color;
 
-  // Specular light (Blinn-Phong) - Metallic look
-  vec3 viewDirection = normalize(cameraPosition - vWorldPosition);
-  vec3 halfwayDirection = normalize(lightDirection + viewDirection);
-  float spec = pow(max(dot(vNormal, halfwayDirection), 0.0), specularShininess);
-  vec3 specular = spec * color; // Specular color is based on object color for metallic
+  // Specular light component (Blinn-Phong, metallic)
+  vec3 viewDirection = normalize(cameraPosition - vWorldPosition); // Direction to camera
+  vec3 halfwayDirection = normalize(lightDirection + viewDirection); // Halfway vector
+  float spec = pow(max(dot(vNormal, halfwayDirection), 0.0), specularShininess); // Specular factor
+  vec3 specular = spec * color; // Specular color (from the object's color for metallic)
 
-  // Combine lighting components
+  // Combine all lighting components
   vec3 result = ambient + diffuse + specular;
-  gl_FragColor = vec4(result, 1.0);
+  gl_FragColor = vec4(result, 1.0); // Final fragment color
 }
