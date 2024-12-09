@@ -6,7 +6,6 @@ uniform vec3 lightPosition; // Position of the light source
 uniform vec3 lightColor; // Color of the light source
 uniform float ambientIntensity; // Ambient light intensity
 uniform float specularShininess; // Shininess for the specular highlight
-uniform vec3 cameraPosition;
 
 void main() {
   // Ambient light component
