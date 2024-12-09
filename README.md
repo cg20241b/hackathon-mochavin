@@ -2,6 +2,32 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=17481072)
 # Three.js Shader Hackathon Project
 
+
+*   **Favorite Color:**  `#191970` (Midnight Blue)
+*   **Complementary Color:** `#707019` (Olive)  _This was determined using the [Canva Color Wheel](https://www.canva.com/colors/color-wheel/)._
+*   **Last Three Digits of Student ID:** `061`
+
+## Running the Project
+
+Here's how to get this project up and running:
+
+1. **Open in GitHub Codespaces:** Launch the project within a GitHub Codespaces environment.
+2. **Install Dependencies:** In the Codespaces terminal, execute the following command to install the necessary project dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. **Start the Development Server:** Run the development server using this command:
+
+    ```bash
+    npm run dev
+    ```
+
+4. **Access the Application:**
+    *   You should see a notification pop up. Click **"Open in Browser"** to view the application.
+    *   Alternatively, navigate to the **"Ports"** tab in Codespaces and click the globe icon next to the forwarded address for the running application.
+
 **Objective:**  
 This project demonstrates custom vertex and fragment shaders using Three.js in a GitHub Codespace environment. The goal is to gain practical experience in shader-based materials, lighting, and object manipulation, culminating in an interactive 3D scene rendered in the browser.
 
